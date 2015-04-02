@@ -4,12 +4,19 @@ Requirements:
 
 - mafft
 
+  Can be downloaded from:
+
+    http://mafft.cbrc.jp/alignment/software/
+
 - Rscript (command line R)
   - getopt package
 
-  can be found at:
+  Can be found from:
+  
     http://cran.r-project.org/src/contrib/getopt_1.20.0.tar.gz
+
   on OSX should be installed at:
+
     /Library/Frameworks/R.framework/Resources/library/
 
 - perl
