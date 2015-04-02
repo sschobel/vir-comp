@@ -11,7 +11,7 @@ Requirements:
 - Rscript (command line R)
   - getopt package
 
-  Can be found from:
+  Can be downloaded from:
   
     http://cran.r-project.org/src/contrib/getopt_1.20.0.tar.gz
 
