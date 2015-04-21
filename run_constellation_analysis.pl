@@ -1,10 +1,48 @@
 #!/usr/bin/perl
 
+###############################################################################
+#                                                                             # 
+#       Copyright (c) 2015 J. Craig Venter Institute.                         #     
+#       All rights reserved.                                                  #
+#                                                                             #
+###############################################################################
+#                                                                             #
+#    This program is free software: you can redistribute it and/or modify     #
+#    it under the terms of the GNU General Public License as published by     #
+#    the Free Software Foundation, either version 3 of the License, or        #
+#    (at your option) any later version.                                      #
+#                                                                             #
+#    This program is distributed in the hope that it will be useful,          #
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of           #
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            #
+#    GNU General Public License for more details.                             #
+#                                                                             #
+#    You should have received a copy of the GNU General Public License        #
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.    #
+#                                                                             #
+###############################################################################
+
+###############################################################################
+
 use strict;
 use FindBin;
+use Getopt::Std;
+use vars qw($opt_l $opt_P);
 
-my $seg_file = $ARGV[0];
-my $protein = $ARGV[1];
+getopts("l:sr:P:o");
+my $usage = "usage: 
+$0 
+	-l <.MAP file>
+	[-P (Amino Acid/Protein Flag)]
+
+	Takes a list of DNA,RNA or, protein features, computes pairwise distance 
+	and between each feature of a particualr category.  Next categories are 
+	parsed into a matrix for each sample based on a specified percent identity 
+	cutoff.
+";
+
+my $seg_file = $opt_l;
+my $protein = $opt_P;
 my $ext;
 
 if ($protein) {
