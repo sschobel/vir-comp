@@ -41,6 +41,10 @@ $0
 	cutoff.
 ";
 
+if(!defined($opt_l)){
+	die $usage;
+}
+
 my $seg_file = $opt_l;
 my $protein = $opt_P;
 my $ext;
@@ -51,7 +55,7 @@ if ($protein) {
 	$ext = "fasta";
 }
 
-open (IN, $seg_file) || die "cannot open $seg_file. $!\n";
+open (IN, $seg_file) || die "cannot open feature list file '$seg_file'. $!\n";
 my @segs;
 my %order;
 my $count;
