@@ -29,7 +29,7 @@ use FindBin;
 use Getopt::Std;
 use vars qw($opt_l $opt_P);
 
-getopts("l:sr:P:b");
+getopts("l:sr:P");
 my $usage = "usage: 
 $0 
 	-l <.MAP file>
